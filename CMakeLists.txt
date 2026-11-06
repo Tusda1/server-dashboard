@@ -6,6 +6,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(dash
     src/main.cpp
+    src/memory.cpp
+    src/memory.hpp
 )
 
 target_compile_options(dash PRIVATE -Wall -Wextra)
