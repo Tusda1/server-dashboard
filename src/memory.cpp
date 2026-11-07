@@ -27,4 +27,4 @@ MemoryInfo readMemory() {
         }
     }
     return memInfo;
-};
+}
