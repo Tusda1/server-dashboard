@@ -2,6 +2,8 @@
 
 #include "monitor.hpp"
 
+// TODO: Add load?
+
 class CPUMonitor : public Monitor {
 private:
     struct CPUTicks {

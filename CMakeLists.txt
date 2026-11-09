@@ -12,10 +12,15 @@ FetchContent_MakeAvailable(ftxui)
 
 add_executable(dash
     src/main.cpp
-    src/memory.cpp
-    src/memory.hpp
-    src/cpu.cpp
-    src/cpu.hpp
+    src/monitors/memory.cpp
+    src/monitors/memory.hpp
+    src/monitors/cpu.cpp
+    src/monitors/cpu.hpp
+    src/monitors/monitor.hpp
+    src/monitors/disk.hpp
+    src/monitors/network.hpp
+    src/monitors/temp.hpp
+    src/monitors/process.hpp
 )
 
 target_link_libraries(dash PRIVATE ftxui::screen ftxui::dom ftxui::component)
