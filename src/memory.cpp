@@ -4,7 +4,7 @@
 
 #include "memory.hpp"
 
-MemoryInfo readMemory() {
+void MemoryMonitor::readMemory() {
     MemoryInfo memInfo;
 
     std::ifstream fs("/proc/meminfo");
@@ -26,5 +26,12 @@ MemoryInfo readMemory() {
             found ++;
         }
     }
-    return memInfo;
+
+    memoryStats = memInfo;
+}
+
+void MemoryMonitor::update() {
+    readMemory();
+
+    memoryUsagePercent = static_cast<double>(memoryStats.availablekB)/memoryStats.totalkB;
 }

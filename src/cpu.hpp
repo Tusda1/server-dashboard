@@ -1,6 +1,8 @@
 #pragma once
 
-class CPUMonitor {
+#include "monitor.hpp"
+
+class CPUMonitor : public Monitor {
 private:
     struct CPUTicks {
         unsigned long long idle = 0;
@@ -18,7 +20,7 @@ private:
 public:
     CPUMonitor();   // Constructor
 
-    void update();
+    void update() override;
     double getUsagePercent() const {return usagePercent;}
     double getWaitPercent() const {return waitPercent;}
 };
